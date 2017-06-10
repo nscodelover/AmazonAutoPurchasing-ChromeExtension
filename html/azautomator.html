@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>AZAutomator</title>
+    <link rel="stylesheet" href="../css/css.css" />
+
+    <script src="../js/jquery-2.2.3.min.js"></script>
+    <script src="../js/jquery.mask.min.js"></script>
+    <script src="../js/azautomator.js"></script>
+
+    <script src="../js/crypto/hmac-sha256.js"></script>
+    <script src="../js/crypto/enc-base64-min.js"></script>
+
+</head>
+<body class="wizard">
+    <div class="container">
+        <img src="../img/close.png" class="close" alt="Close" />
+        <img src="../img/settings.png" class="settings" alt="Settings" />
+        <div>
+          <h2 style="color:blue;">AZAutomator<h2/>
+        </div>
+        <div class="calc">
+            <div class="label">
+                Current Price
+            </div>
+            <input type="text" id="current-price" value="" readonly/>
+
+            <div class="label">
+                Enter Desired Price
+            </div>
+            <input type="text" id="desired-price" value="" />
+
+            <div class="label">
+                Enter Desired Quantity
+            </div>
+            <input type="text" id="desired-qty" value="" />
+            <br />
+
+            <input type="button" value="Save" id="save-btn" />
+        </div>
+        <br/>
+    </div>
+</body>
+</html>

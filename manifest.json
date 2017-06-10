@@ -1,16 +1,55 @@
 {
-  "manifest_version": 2,
-
-  "name": "AZAutomator",
-  "description": "This extension allows user to pre-determine desired price and maximum quantity which they want to buy item from Amazon.com. When item reaches this price, the app will automatically purchase the item using the users Amazon.com account. User will be required to sign up for annual (12 month) subscription to use of the app.",
-  "version": "1.0",
-
-  "browser_action": {
-    "default_icon": "images/icon.png",
-    "default_popup": "html/popup.html"
-  },
-  "permissions": [
-    "activeTab",
-    "https://ajax.googleapis.com/"
-  ]
+    "manifest_version": 2,
+    "name": "AZAutomator",
+    "short_name": "AZAutomator",
+    "version": "1.0",
+    "description": "This extension allows user to pre-determine desired price and maximum quantity which they want to buy item from Amazon.com. When item reaches this price, the app will automatically purchase the item using the users Amazon.com account. User will be required to sign up for annual (12 month) subscription to use of the app.",
+    "icons": {
+        "16"  : "img/calc-icon.png",
+        "48"  : "img/calc-icon.png",
+        "128" : "img/calc-icon.png"
+    },
+    "browser_action": {
+        "default_icon": "img/calc-icon.png",
+        "default_popup": "html/popup.html"
+    },
+    "background": {
+        "scripts": ["js/jquery-2.2.3.min.js",
+                    "js/crypto/hmac-sha256.js",
+                    "js/crypto/enc-base64-min.js",
+                    "js/background.js"]
+    },
+    "options_page": "html/options.html",
+    "content_scripts": [
+        {
+            "run_at": "document_start",
+            "matches": [
+                "*://www.amazon.co.uk/*",
+                "*://www.amazon.com.au/*",
+                "*://www.amazon.com.br/*",
+                "*://www.amazon.com/*",
+                "*://www.amazon.ca/*",
+                "*://www.amazon.fr/*",
+                "*://www.amazon.cn/*",
+                "*://www.amazon.de/*",
+                "*://www.amazon.in/*",
+                "*://www.amazon.it/*",
+                "*://www.amazon.com.mx/*",
+                "*://www.amazon.es/*",
+                "*://www.amazon.com/*"
+            ],
+            "css": ["css/css.css"],
+            "js": ["js/jquery-2.2.3.min.js", "js/pageazautomator.js"]
+        }
+    ],
+    "web_accessible_resources": [
+        "html/azautomator.html",
+        "html/options.html"
+    ],
+    "permissions": [
+        "activeTab",
+        "webRequest",
+        "<all_urls>",
+        "tabs"
+    ]
 }

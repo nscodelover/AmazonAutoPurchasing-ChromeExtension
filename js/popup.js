@@ -1,22 +1,5 @@
-/*
-Created by Alok 2017/2/8
-*/
+jQuery(document).ready(function($){
+    chrome.tabs.executeScript(null, {file: "js/showHideFrame.js"}, function() {});
 
-$(document).ready(function() {
-
-  function toggleButton(button) {
-
-    if(button.checked ==true) {
-      console.log("checked");
-    }
-    else {
-      console.log("unchecked");
-    }
-
-  }
-
-  $("#cmn-toggle-1").click(function() {
-    toggleButton(this);
-  });
-
+    window.close();
 });

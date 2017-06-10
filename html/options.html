@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>AZAutomator - Options</title>
+    <link rel="stylesheet" href="../css/css.css" />
+
+    <script src="../js/jquery-2.2.3.min.js"></script>
+    <script src="../js/options.js"></script>
+</head>
+<body class="wizard">
+    <div class="container">
+      <div class="title">
+        <h1> AZAutomator </h1>
+      </div>
+      <div class="tab-selected" rel="license">
+          License
+      </div>
+      <div class="tab-normal" rel="config">
+          Settings
+      </div>
+      <br style="clear:both" />
+      <div class="color-content">
+          <div class="calc license">
+              <div class="label">
+                  Enter your license
+              </div>
+              <input type="text" id="license-key" value="" />
+              <br />
+              <input type="button" value="Validate license key" id="validate-license-key" />
+              <input type="button" value="Buy new license key" id="buy-license-key" />
+          </div>
+
+          <div class="config" style="display:none;">
+              <div class="label">
+                  Enter your email
+              </div>
+              <input type="text" id="user_email" />
+              <br />
+              <input type="button" value="Save" id="save-settings" />
+          </div>
+          <div class="loader-calc">
+              <img src="../img/loader.svg" />
+          </div>
+          <br />
+      </div>
+    </div>
+</body>
+</html>
